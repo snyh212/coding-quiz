@@ -30,20 +30,42 @@ THEN I can save my initials and my score */
 
 
 
-var start = document.querySelector (".start");
-var timer = document.querySelector ("");
+var start = document.querySelector ("#start");
+var timer = document.querySelector ("#timer");
+var timeLeft = 75;
 var question = document.querySelector (".question");
 var score = document.querySelector (".score");
 var answers = document.querySelector ("#answers");
-var initials =
-var end
+var initials;
+var end = false; //set end to false until true (game over)
 
 
-var clickStart
-var timerCnt
-var ask
-var answer
-var tf
-var over
-var scoreCal
-var initials
+/* var clickStart;
+var timerCnt;
+var ask;
+var answer;
+var over;
+var scoreCal;
+var initials; */
+
+start.addEventListener("click", function(event) {
+   event.preventDefault();
+   timerCnt();
+   start.setAttribute("hidden",true);
+/*    newQuestion(); */
+   //functions for question & answers
+});
+
+function timerCnt() {
+   myInterval = setInterval(function() {
+      if(timeLeft > 0) {
+         timer.innerHTML = timeLeft;
+         timeLeft--;
+      }/* else {
+       over()  
+      } */
+
+   }, 1000);
+}
+
+function ask
