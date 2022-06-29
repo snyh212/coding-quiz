@@ -32,12 +32,17 @@ THEN I can save my initials and my score */
 
 var start = document.querySelector ("#start");
 var timer = document.querySelector ("#timer");
-var timeLeft = 75;
-var question = document.querySelector (".question");
+var timeLeft = 60;
+var question = document.querySelector ("#question");
 var score = document.querySelector (".score");
 var answers = document.querySelector ("#answers");
 var initials;
 var end = false; //set end to false until true (game over)
+
+questions = ["Which is not a coding language?", "To become a web developer you must -", "For optimal coding sleep is needed -"];
+answers1 = ["html","javascript","spanish"];
+answers2 = ["Get a masters","Complete a bootcamp","w3schools"];
+answers3 = ["Never","Always","During work"];
 
 
 /* var clickStart;
@@ -51,6 +56,7 @@ var initials; */
 start.addEventListener("click", function(event) {
    event.preventDefault();
    timerCnt();
+   ask();
    start.setAttribute("hidden",true);
 /*    newQuestion(); */
    //functions for question & answers
@@ -58,7 +64,7 @@ start.addEventListener("click", function(event) {
 
 function timerCnt() {
    myInterval = setInterval(function() {
-      if(timeLeft > 0) {
+      if(timeLeft > -1) {
          timer.innerHTML = timeLeft;
          timeLeft--;
       }/* else {
@@ -68,4 +74,6 @@ function timerCnt() {
    }, 1000);
 }
 
-function ask
+function ask(){
+   question.innerHTML = questions [0];
+}
