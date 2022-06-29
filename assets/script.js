@@ -44,22 +44,12 @@ answers2 = ["Get a masters","Complete a bootcamp","w3schools"];
 answers3 = ["Never","Always","During work"];
 
 
-/* var clickStart;
-var timerCnt;
-var ask;
-var answer;
-var over;
-var scoreCal;
-var initials; */
-
 start.addEventListener("click", function(event) {
    event.preventDefault();
    timerCnt();
    ask();
    answer();
    start.setAttribute("hidden",true);
-/*    newQuestion(); */
-   //functions for question & answers
 });
 
 
@@ -69,10 +59,7 @@ function timerCnt() {
       if(timeLeft > 0) {
          timer.innerHTML = timeLeft;
          timeLeft--;
-      }/* else {
-       over()  
-      } */
-
+      }
    }, 1000);
 }
 
